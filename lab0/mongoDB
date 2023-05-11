@@ -1,0 +1,237 @@
+Microsoft Windows [Version 10.0.19044.1889]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\bmsce>mongosh "mongodb+srv://cluster1.kipkn5v.mongodb.net/DBMS_demo1" --apiVersion 1 --username shrutics20
+Enter password: **********
+Current Mongosh Log ID: 6439d9cefc2f330138727ef0
+Connecting to:          mongodb+srv://<credentials>@cluster1.kipkn5v.mongodb.net/DBMS_demo1?appName=mongosh+1.8.0
+MongoServerSelectionError: certificate is not yet valid
+
+C:\Users\bmsce>mongosh "mongodb+srv://cluster1.kipkn5v.mongodb.net/DBMS_demo1" --apiVersion 1 --username shrutics20
+Enter password: *********
+Current Mongosh Log ID: 643a27c033e1aa12189f1c90
+Connecting to:          mongodb+srv://<credentials>@cluster1.kipkn5v.mongodb.net/DBMS_demo1?appName=mongosh+1.8.0
+MongoServerError: bad auth : authentication failed
+
+C:\Users\bmsce>mongosh "mongodb+srv://cluster1.kipkn5v.mongodb.net/DBMS_demo1" --apiVersion 1 --username shrutics20
+Enter password: **********
+Current Mongosh Log ID: 643a27cceb99a8175b2ff0e9
+Connecting to:          mongodb+srv://<credentials>@cluster1.kipkn5v.mongodb.net/DBMS_demo1?appName=mongosh+1.8.0
+Using MongoDB:          6.0.5 (API Version 1)
+Using Mongosh:          1.8.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.insert( {RollNo:1, Age:21. Cont:9876, email:"antara.de9@gmail.com"});
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:38)
+
+> 1 | db.Student.insert( {RollNo:1, Age:21. Cont:9876, email:"antara.de9@gmail.com"});
+    |                                       ^
+  2 |
+
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.insert( {RollNo:1, Age:21, Cont:9876, email:
+... db.Student.insert( {RollNo:1, Age:21, Cont:9876, email:"antara.de9@gmail.com"});
+Uncaught:
+SyntaxError: Unexpected token, expected "," (2:79)
+
+  1 | db.Student.insert( {RollNo:1, Age:21, Cont:9876, email:
+> 2 | db.Student.insert( {RollNo:1, Age:21, Cont:9876, email:"antara.de9@gmail.com"});
+    |                                                                                ^
+  3 |
+
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.insert( {RollNo:1, Age:21, Cont:9876, email:"antara.de9@gmail.com"});
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("643a2898ee0bdaa6ffbdf1dd") }
+}
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.insert( {RollNo:2, Age:22, Cont:9976, email:"anuksha.de9@gmai.com"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("643a28c8ee0bdaa6ffbdf1de") }
+}
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.insert( {RollNo:3, Age:21, Cont:5576, email:
+... "
+Uncaught:
+SyntaxError: Unterminated string constant. (2:0)
+
+  1 | db.Student.insert( {RollNo:3, Age:21, Cont:5576, email:
+> 2 | "
+    | ^
+  3 |
+
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.insert( {RollNo:3, Age:21, Cont:5576, email: "anubhav.de9@gmail.com"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("643a28f2ee0bdaa6ffbdf1df") }
+}
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.insert( {RollNo:4, Age:20, Cont:4476, email:"pani.de9@gmail.com"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("643a291eee0bdaa6ffbdf1e0") }
+}
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.insert( {RollNo:10, Age:23, Cont:2276, email:"rekha.de9@gmail.com"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("643a293cee0bdaa6ffbdf1e1") }
+}
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.find()
+[
+  {
+    _id: ObjectId("643a2898ee0bdaa6ffbdf1dd"),
+    RollNo: 1,
+    Age: 21,
+    Cont: 9876,
+    email: 'antara.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("643a28c8ee0bdaa6ffbdf1de"),
+    RollNo: 2,
+    Age: 22,
+    Cont: 9976,
+    email: 'anuksha.de9@gmai.com'
+  },
+  {
+    _id: ObjectId("643a28f2ee0bdaa6ffbdf1df"),
+    RollNo: 3,
+    Age: 21,
+    Cont: 5576,
+    email: 'anubhav.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("643a291eee0bdaa6ffbdf1e0"),
+    RollNo: 4,
+    Age: 20,
+    Cont: 4476,
+    email: 'pani.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("643a293cee0bdaa6ffbdf1e1"),
+    RollNo: 10,
+    Age: 23,
+    Cont: 2276,
+    email: 'rekha.de9@gmail.com'
+  }
+]
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.update({RollNo:10},{$set:{email:"Abhinav@gmail.com"}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.insert({RollNo:11, Age:22, Name:"ABC",Cont:2276,email:"rea.de9@gmail.com"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("643a29acee0bdaa6ffbdf1e2") }
+}
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.find()
+[
+  {
+    _id: ObjectId("643a2898ee0bdaa6ffbdf1dd"),
+    RollNo: 1,
+    Age: 21,
+    Cont: 9876,
+    email: 'antara.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("643a28c8ee0bdaa6ffbdf1de"),
+    RollNo: 2,
+    Age: 22,
+    Cont: 9976,
+    email: 'anuksha.de9@gmai.com'
+  },
+  {
+    _id: ObjectId("643a28f2ee0bdaa6ffbdf1df"),
+    RollNo: 3,
+    Age: 21,
+    Cont: 5576,
+    email: 'anubhav.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("643a291eee0bdaa6ffbdf1e0"),
+    RollNo: 4,
+    Age: 20,
+    Cont: 4476,
+    email: 'pani.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("643a293cee0bdaa6ffbdf1e1"),
+    RollNo: 10,
+    Age: 23,
+    Cont: 2276,
+    email: 'Abhinav@gmail.com'
+  },
+  {
+    _id: ObjectId("643a29acee0bdaa6ffbdf1e2"),
+    RollNo: 11,
+    Age: 22,
+    Name: 'ABC',
+    Cont: 2276,
+    email: 'rea.de9@gmail.com'
+  }
+]
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.update({RollNo:11, Name:"ABC"},{$set:{Name:"FEM"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.show()
+TypeError: db.Student.show is not a function
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1> db.Student.find()
+[
+  {
+    _id: ObjectId("643a2898ee0bdaa6ffbdf1dd"),
+    RollNo: 1,
+    Age: 21,
+    Cont: 9876,
+    email: 'antara.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("643a28c8ee0bdaa6ffbdf1de"),
+    RollNo: 2,
+    Age: 22,
+    Cont: 9976,
+    email: 'anuksha.de9@gmai.com'
+  },
+  {
+    _id: ObjectId("643a28f2ee0bdaa6ffbdf1df"),
+    RollNo: 3,
+    Age: 21,
+    Cont: 5576,
+    email: 'anubhav.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("643a291eee0bdaa6ffbdf1e0"),
+    RollNo: 4,
+    Age: 20,
+    Cont: 4476,
+    email: 'pani.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("643a293cee0bdaa6ffbdf1e1"),
+    RollNo: 10,
+    Age: 23,
+    Cont: 2276,
+    email: 'Abhinav@gmail.com'
+  },
+  {
+    _id: ObjectId("643a29acee0bdaa6ffbdf1e2"),
+    RollNo: 11,
+    Age: 22,
+    Name: 'FEM',
+    Cont: 2276,
+    email: 'rea.de9@gmail.com'
+  }
+]
+Atlas atlas-10724g-shard-0 [primary] DBMS_demo1>
